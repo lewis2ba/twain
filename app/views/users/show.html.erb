@@ -1,0 +1,15 @@
+<h2><%= @user.email %></h2>
+<%if(current_user==@user)%>
+  <h3>My Library</h3>
+  <%= link_to "Add a book to my Library", new_user_book_path(@user) %>
+<% else %>
+  <h3><%=@user.email%>'s Library</h3>
+<% end %>
+<% @books.each do |book| %>
+  <h4><%= book.title %></h4>
+  <%= link_to image_tag(book.image_url), user_book_path(book.user,book)  %>
+  <% if current_user==@user %>
+    <%= link_to "Update Book", edit_user_book_path(@user, book) %>
+  <% end %>
+<%end%>
+ 
