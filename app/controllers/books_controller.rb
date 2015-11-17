@@ -1,7 +1,23 @@
 class BooksController < ApplicationController
 
   def index
+    @tags = Tag.all
+
+    if(params[:tags])
+      @tags = Tag.where(name: params[:tags])
+      @taggings = []
+      @book = []
+      @tags.each do |tag|
+        @taggings << tag.taggings
+
+        @taggings.each do |tagging|
+          @books << tagging.book
+        end
+      end
+
+    else
     @books = Book.all
+    end
   end
 
   def show

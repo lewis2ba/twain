@@ -7,4 +7,8 @@
 <p>Pages: <%= @book.no_pages %></p>
 <p>Condition: <%= @book.condition %></p>
 <p id = "synopsis">Synopsis: <%= @book.synopsis %></p>
+
+<span> Tags: <span><% @book.taggings.each do |tagging| %>
+  <%= tagging.tag.name%> 
+    <% end %>
 </div>

@@ -7,8 +7,13 @@ Rails.application.routes.draw do
   resources :books
 
   resources :users do
-    resources :books
+    resources :books do
+      resources :tags
+    end
   end
+
+
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

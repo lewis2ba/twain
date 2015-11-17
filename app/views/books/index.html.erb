@@ -1,5 +1,17 @@
 <h1 class = "text-center">Library</h1>
   <div class = "library">
+<% tag_names = [] %>
+<% @tags.each do |tag| %>
+<% tag_names << tag.name %>
+<%end%>
+
+
+
+<%= form_tag books_path do %>
+       <%= select_tag "tags", options_for_select(tag_names.uniq) %>
+       <%= submit_tag "Filter by Tag" %>
+<% end %>
+
   <% @books.each do |book| %>
     <div class="category">
       <p><%= book.title %></p>
