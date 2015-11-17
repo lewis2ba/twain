@@ -1,15 +1,34 @@
-<h2><%= @user.email %></h2>
+<div class = "prof">
+<%= image_tag(@user.profile_photo_url)%>
+<p>Username: <%= @user.username %> </p>
+<p>About: <%= @user.about %> </p>
 <%if(current_user==@user)%>
-  <h3>My Library</h3>
-  <%= link_to "Add a book to my Library", new_user_book_path(@user) %>
-<% else %>
-  <h3><%=@user.email%>'s Library</h3>
+<p><%= link_to "Update Profile", edit_user_path(@user), id: "profile" %></p>
 <% end %>
+</div>
+
+
+
+
+
+<%if(current_user==@user)%>
+  <h3 class = "text-center">My Library</h3>
+<% else %>
+  <h3 class = "text-center"><%=@user.username%>'s Library</h3>
+<% end %>
+<%if(current_user==@user)%>
+<h5 class = "text-center"><%= link_to "Add a book to my Library", new_user_book_path(@user) %></h5>
+<% end %>
+
+<div class = "library">
 <% @books.each do |book| %>
-  <h4><%= book.title %></h4>
+  <div class="category">
+  <p><%= book.title %></p>
   <%= link_to image_tag(book.image_url), user_book_path(book.user,book)  %>
   <% if current_user==@user %>
-    <%= link_to "Update Book", edit_user_book_path(@user, book) %>
+    <p><%= link_to "Update Book", edit_user_book_path(@user, book) %><p>
   <% end %>
+</div>
 <%end%>
+</div>
  

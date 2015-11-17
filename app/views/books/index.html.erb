@@ -1,7 +1,9 @@
-<% @books.each do |book| %>
-<div class = "contain">
-<div align ="center" class="category">
-<p><%= book.title %></p>
-<%= link_to image_tag(book.image_url), user_book_path(book.user,book) %></div>
-<% end %>
+<h1 class = "text-center">Library</h1>
+  <div class = "library">
+  <% @books.each do |book| %>
+    <div class="category">
+      <p><%= book.title %></p>
+      <%= link_to image_tag(book.image_url), user_book_path(book.user,book) %>
+    </div>
+  <% end %>
 </div>

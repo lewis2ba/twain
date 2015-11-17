@@ -1,8 +1,10 @@
-<h2 class = "owner">Owner: <%= link_to @user.email, @user %></h2>
-<h2><%= @book.title %></h2>
+<div class = "book_show">
+<h3 class = "owner">Owner: <%= link_to @user.username, @user %></h2>
+<h3><%= @book.title %></h3>
 <%= image_tag(@book.image_url) %>
 <p>Author: <%= @book.author %></p>
 <p>Genre: <%= @book.genre %></p>
 <p>Pages: <%= @book.no_pages %></p>
 <p>Condition: <%= @book.condition %></p>
-<p>Synopsis: <%= @book.synopsis %></p>
+<p id = "synopsis">Synopsis: <%= @book.synopsis %></p>
+</div>

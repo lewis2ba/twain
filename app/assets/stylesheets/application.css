@@ -16,19 +16,41 @@
 body{
   padding-top: 40px;
 }
-.contain {
-max-width:100%;
-text-align:center;
-}
 
 .category {
-position:relative;
-display: inline-block;
-float:left;
-padding:10px;
+  padding:10px;
+  display: inline-block;
 }
 
 img{
   height: 300px;
+}
+.form-group{
+  padding: 20px 0 20px 0;
+}
 
+.library{
+  text-align: center;
+}
+
+.category img{
+  display: inline-block;
+}
+h3{
+  text-align: center;
+}
+.book_show{
+  text-align: center;
+}
+.book_show img{
+  margin-bottom: 15px
+}
+#synopsis{
+  padding: 0 30px 0 30px;
+}
+.prof{
+  height: 300px;
+  display: inline-block;
+  margin-top: 40px;
+  margin-left: 80px;
 }

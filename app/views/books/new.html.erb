@@ -1,26 +1,3 @@
-<%= form_for [@user, @book] do |f| %>
+<h1 class = "text-center">Add a new book</h1>
 
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-
-  <%= f.label :author %>
-  <%= f.text_field :author %>
-
-  <%= f.label :genre %>
-  <%= f.text_field :genre %>
-
-  <%= f.label :image_url %>
-  <%= f.text_field :image_url %>
-
-  <%= f.label :no_pages %>
-  <%= f.text_field :no_pages %>
-
-  <%= f.label :condition %>
-  <%= f.text_field :condition %>
-
-  <%= f.label :synopsis %>
-  <%= f.text_area :synopsis, size: "50x12"%>
-
-  <%= f.submit %>
-
-<% end %>
+<%=render partial: "form"%>
