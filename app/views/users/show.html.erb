@@ -2,7 +2,11 @@
 <%= image_tag(@user.profile_photo_url)%>
 <p>Username: <%= @user.username %> </p>
 <p>About: <%= @user.about %> </p>
+
+<%if(current_user!=@user)%>
 <p><%= mail_to @user.email, "Email #{@user.username} and request a trade."%> </p>
+<% end %>
+
 <%if(current_user==@user)%>
 <p><%= link_to "Update Profile", edit_user_path(@user), id: "profile" %></p>
 <% end %>
