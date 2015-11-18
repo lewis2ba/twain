@@ -4,7 +4,7 @@ class BooksController < ApplicationController
     @tags = Tag.all
       if params[:tags]
         @tag = Tag.find_by(name: params[:tags])
-        @books = Tag.find_by(name: params[:tags]).books
+        @books = Tag.find_by(name: params[:tags]).books.uniq
       else
         @books = Book.all
       end
