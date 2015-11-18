@@ -8,7 +8,7 @@
 <p>Condition: <%= @book.condition %></p>
 <p id = "synopsis">Synopsis: <%= @book.synopsis %></p>
 
-<span> Tags: <span><% @book.taggings.each do |tagging| %>
-  <%= tagging.tag.name%> 
+<span> Tags: <span><% @book.tags.each do |tag| %>
+  <%= tag.name%>
     <% end %>
 </div>
