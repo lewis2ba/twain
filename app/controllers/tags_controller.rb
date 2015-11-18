@@ -9,8 +9,8 @@ class TagsController < ApplicationController
     @user = User.find(params[:user_id])
     @book = Book.find(params[:book_id])
 
-    if Tag.find_by(params[:name]).present?
-      exists = Tag.find_by(params[:name])
+    if (Tag.find_by(tag_params))
+      exists = Tag.find_by(tag_params)
       @tagging = Tagging.create(book_id: @book.id,tag_id: exists.id)
 
     else

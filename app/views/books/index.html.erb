@@ -13,6 +13,9 @@
        <%= select_tag "tags", options_for_select(tag_names.uniq) %>
        <%= submit_tag "Filter by Tag" %>
 <% end %>
+<% if @tag %>
+<h4 class = "filter">Filtering by: <%= @tag.name %></h4>
+<% end %>
 
   <% @books.each do |book| %>
     <div class="category">

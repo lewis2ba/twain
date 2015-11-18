@@ -3,6 +3,7 @@ class BooksController < ApplicationController
   def index
     @tags = Tag.all
       if params[:tags]
+        @tag = Tag.find_by(name: params[:tags])
         @books = Tag.find_by(name: params[:tags]).books
       else
         @books = Book.all
