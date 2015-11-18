@@ -23,6 +23,7 @@ class TagsController < ApplicationController
   redirect_to user_path(@user)
   end
 
+
   private
   def tag_params
     params.require(:tag).permit(:name)

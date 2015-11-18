@@ -5,6 +5,7 @@ class BooksController < ApplicationController
       if params[:tags]
         @tag = Tag.find_by(name: params[:tags])
         @books = Tag.find_by(name: params[:tags]).books.uniq
+        #may have to get rid of uniqueness later, when the same books are posted
       else
         @books = Book.all
       end
