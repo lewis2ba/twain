@@ -16,7 +16,7 @@
 <div class="remove-filter"><%= link_to "Remove Filter", root_path, class: "btn btn-default btn-xs" %></div>
 
 <% if @tag %>
-<h4 class = "filter">Filtering by: <%= @tag.name %></h4>
+<h4 class = "filter">Filtering by Tag: <%= @tag.name %></h4>
 <% end %>
   <% @books.each do |book| %>
     <div class="category">
