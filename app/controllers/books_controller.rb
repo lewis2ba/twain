@@ -43,6 +43,7 @@ class BooksController < ApplicationController
     redirect_to user_path(current_user)
   end
 
+# add `private` here for strong params
   def book_params
       params.require(:book).permit(:title, :author, :genre, :image_url, :no_pages, :synopsis, :condition)
   end
