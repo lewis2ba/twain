@@ -1,3 +1,5 @@
+<%= image_tag("https://static-secure.guim.co.uk/sys-images/Observer/Pix/pictures/2013/12/23/1387823611665/Library-with-a-book-ladde-014.jpg", id: "hero") %>
+
 <h1 class = "text-center">Library</h1>
   <div class = "library">
 <% tag_names = [] %>
@@ -20,7 +22,7 @@
 <% end %>
   <% @books.each do |book| %>
     <div class="category">
-      <p><%= book.title %></p>
+      <p class = "title"><%= book.title %></p>
       <%= link_to image_tag(book.image_url), user_book_path(book.user,book) %>
     </div>
   <% end %>

@@ -60,3 +60,10 @@ h3{
 .remove-filter{
   padding-top: 5px;
 }
+#hero{
+  width: 100%;
+  height: auto;
+}
+.title{
+  font-weight: bold;
+}
