@@ -6,12 +6,17 @@
 
 <% @tags.each do |tag| %>
 <% tag_names << tag.name %>
+<!--
+This is pure "business logic": by itself it doesn't print anything out on the page.
+Business logic like this should take place in the controller or model or elsewhere, but not in the view.
+-->
 <%end%>
 
 
 
 
 <%= form_tag({:action=>"index"},{:method=>"get"}) do %>
+<!-- I wouldn't use `:action` with a `form_tag`. Instead, use a URL helper, e.g. books_path -->
        <%= select_tag "tags", options_for_select(tag_names.uniq), class: "btn btn-default dropdown-toggle" %>
        <%= submit_tag "Filter by Tag", class: "btn btn-default btn-xs" %>
 <% end %>

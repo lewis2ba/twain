@@ -5,6 +5,7 @@ class BooksController < ApplicationController
       if params[:tags]
         @tag = Tag.find_by(name: params[:tags])
         @books = Tag.find_by(name: params[:tags]).books.uniq
+        # @books = @tag.books.uniq
       else
         @books = Book.all
       end
@@ -31,6 +32,7 @@ class BooksController < ApplicationController
 
   def update
     @user = current_user
+    # ^ This line doesn't do anything
     @book = Book.find(params[:id])
     @book.update(book_params)
     redirect_to user_path(current_user)
@@ -38,6 +40,7 @@ class BooksController < ApplicationController
 
   def destroy
     @user = current_user
+    # ^ This line doesn't do anything
     @book = Book.find(params[:id])
     @book.destroy
     redirect_to user_path(current_user)
