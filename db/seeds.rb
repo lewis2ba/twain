@@ -34,6 +34,13 @@
 @user7 = User.create(email: "what_the6@yahoo.com", password: "password", password_confirmation: "password" , username: "The Joyce Man", profile_photo_url: "http://cps-static.rovicorp.com/3/JPG_400/MI0002/861/MI0002861493.jpg?partner=allrovi.com", about: "Hi I'm James")
 @user7.save!
 
+# When you use `.create`, you don't need `.save` -- that's mostly for when you use `.new`.
+# Also, `.create` returns that particular user, so you could actually create a user and a book in one line:
+# User.create(email: "...").books.create(title: "...")
+# I'd encourage you to look into using JSON when you have seeds as extensive as this.
+# You can base it off of Tunr:
+# https://github.com/ga-dc/tunr_rails_deployment/blob/master/db/seeds.rb
+
 @user1.books.create(title: "The Great Gatsby" , author: "F. Scott Fitzgerald", genre: "Fiction", image_url: "http://images.rapgenius.com/bfz5ovh9ecolxdr1f3j00fka2.534x800x1.jpg", no_pages: 321, condition: "Good" , synopsis:"Midwest native Nick Carraway arrives in 1922 New York in search of the American dream. Nick, a would-be writer, moves in next-door to millionaire Jay Gatsby and across the bay from his cousin Daisy (Carey Mulligan) and her philandering husband, Tom. Thus, Nick becomes drawn into the captivating world of the wealthy and -- as he bears witness to their illusions and deceits -- pens a tale of impossible love, dreams, and tragedy.")
 
 @user1.books.create(title: "Brave New World" , author: "Aldous Huxley", genre: "Fiction", image_url: "https://upload.wikimedia.org/wikipedia/en/6/62/BraveNewWorld_FirstEdition.jpg", no_pages: 255, condition: "Good" , synopsis:"The novel opens in the Central London Hatching and Conditioning Centre, where the Director of the Hatchery and one of his assistants, Henry Foster, are giving a tour to a group of boys. The boys learn about the Bokanovsky and Podsnap Processes that allow the Hatchery to produce thousands of nearly identical human embryos. During the gestation period the embryos travel in bottles along a conveyor belt through a factorylike building, and are conditioned to belong to one of five castes: Alpha, Beta, Gamma, Delta, or Epsilon. The Alpha embryos are destined to become the leaders and thinkers of the World State. Each of the succeeding castes is conditioned to be slightly less physically and intellectually impressive. The Epsilons, stunted and stupefied by oxygen deprivation and chemical treatments, are destined to perform menial labor. Lenina Crowne, an employee at the factory, describes to the boys how she vaccinates embryos destined for tropical climates.")

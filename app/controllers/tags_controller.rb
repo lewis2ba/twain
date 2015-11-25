@@ -4,7 +4,8 @@ class TagsController < ApplicationController
     @book = Book.find(params[:book_id])
     @tag = Tag.new
   end
-
+  # Generally, the only stuff you want to keep in your master branch is stuff that works
+  # Features that are in-development should be moved to another branch
   def create
     @user = User.find(params[:user_id])
     @book = Book.find(params[:book_id])
