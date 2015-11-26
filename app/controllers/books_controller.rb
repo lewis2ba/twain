@@ -4,7 +4,7 @@ class BooksController < ApplicationController
     @tags = Tag.all
       if params[:tags]
         @tag = Tag.find_by(name: params[:tags])
-        @books = Tag.find_by(name: params[:tags]).books.uniq
+        @books = @tag.books.uniq
       else
         @books = Book.all
       end
@@ -20,9 +20,8 @@ class BooksController < ApplicationController
   end
 
   def create
-    @user = current_user
-    @book = @user.books.create!(book_params)
-    redirect_to user_path(@user)
+    @book = current_user.books.create!(book_params)
+    redirect_to user_path(current_user)
   end
 
   def edit
@@ -30,14 +29,12 @@ class BooksController < ApplicationController
   end
 
   def update
-    @user = current_user
     @book = Book.find(params[:id])
     @book.update(book_params)
     redirect_to user_path(current_user)
   end
 
   def destroy
-    @user = current_user
     @book = Book.find(params[:id])
     @book.destroy
     redirect_to user_path(current_user)
