@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root to: "books#index"
 
   resources :books
+  #Might not need both nested and unnested resources for :books, consider using only: [:index, :show] or except: [:index, :edit] etc...
 
   resources :users do
     resources :books do
